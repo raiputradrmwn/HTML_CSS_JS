@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://makasi.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://makasi.likeadream.repl.co/script.js"></script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #ffdde1; /* Soft background color */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .content-wrapper {
+            display: none;
+            justify-content: space-between; /* Align video and text horizontally */
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: 100%; /* Limit wrapper width */
+            max-width: 1200px; /* Max width for larger video and text */
+            flex-wrap: nowrap; /* Ensure content stays side by side on large screens */
+        }
+
+        .video-section {
+            display: flex;
+            justify-content: center;
+            width: 45%; /* Video size */
+            max-width: 600px; /* Max video size */
+        }
+
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Message container */
+        .catatan-container {
+            width: 50%; /* Same as video size */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #koteks {
+            font-size: 18px;
+            text-align: justify;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Text effect */
+        p.catatan {
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Romantic decoration */
+        .heart {
+            position: absolute;
+            color: #ff6b81;
+            font-size: 2rem;
+            animation: float 20s ease-in-out infinite; /* Extended animation to 20 seconds */
+            z-index: 9999;  /* Pastikan hati berada di atas elemen lain */
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(1); }
+            100% { transform: translateY(-100vh) scale(1.5); }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column; /* On small screens, video and text display vertically */
+            }
+            .video-section, .catatan-container {
+                width: 100%; /* Video and text take 100% screen on small devices */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Container for video and text -->
+<div class="content-wrapper" style="display: none; opacity: 0;" id="contentWrapper">
+    <!-- Video Section -->
+    <div class="video-section">
+        <video class="responsive-video" id="videoElement" autoplay muted loop>
+            <source src="Need/NZ.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <!-- Text Section -->
+    <div class='catatan-container'>
+        <p class='catatan' id='koteks'>
+            <span id="text"></span><br>
+        </p>
+    </div>
+</div>
+
+<script>
+var i = 0, text;
+text = "Finallyyy your day has comee!!! SELAMAT ULANG TAHUN SAYANGKU CINTAKU CANTIKKU THE ONE AND ONLY ONE RATNA PERMATASARI YEAYYYY 🥳🥳🥳.\n\nSayanggg thankyouu sooo muchh for everything you’ve done, terimakasih untuk segala kasih sayang dan perhatian yang telah kamu berikan ke aku dalam bentuk apapun itu. Terimakasih sudah hadir di hidup aku, terimakasih karna kamu selalu menemani hari hari aku, terimakasih udah mau susah & senang sama akuu, terimakasih karna kamu selalu ngertiin dan support aku tidak ada habisnya. Aku sayang bangettt sama kamuu cintaaa.\n\nMaafin aku yaa sayangg kalo aku ada salah dalam perkataan atau perbuatan selama ini yang tidak berkenan di hati kamu aku minta maaf. Aku selalu ingin untuk melihat kamu bahagia selalu, senyum & ketawa teruss karna itu adalah cara aku untuk recharge energi ku.\n\nI’m so lucky to have you sayangg and i hope you feel the same way too!!!. Maafin akuu yaa kalau terkadang aku belum bisa kasih yang terbaikk seperti yang apa harusnya kamu dapatkan. Tapi semoga kamu tahu bahwa segala yang aku lakukan adalah dari lubuh hatiku yang paling dalam dan selalu untuk kebahagian kamu dan aku kedepannya.\n\nAku selalu bilang ke kamu kan, “Jalan kita masing panjang sayang”. Jadi mari kita nikmati perjalanan kita bagaimanapun tantangannya bagaimanapun, bagaimanapun jalurnya, bagaiamanapun cuacanya, aku yakin itu semua adalah bagian dari perjalanan kita yang harus kita lewati sama sama yaaa sayangg, dan pesan dari aku, I hope you'll always remember the path we've been through together. Semoga itu jadi landasan atau dasar kokoh yang membantu kita kedepannya yaa sayangg.\n\nLast but not least, happy 21st birthday, my love!!! Aku mencintaimu lebih dari kata-kata yang bisa kuucapkan, dan aku berharap perjalanan kita bersama masih panjang dan penuh kebahagiaan. Semoga Tuhan selalu memberkati setiap langkah kamu dan memberikan kebahagiaan yang tak terhingga untukmu ya sayangg. Happy birthday, my love! Aku mencintaimu sekarang dan selamanya sayang - Bule.";
+
+function playAudio() { 
+    var audio = new Audio('Need/Sempurna.mp3');
+    audio.play();
+}
+
+function playVideo() {
+    var video = document.getElementById('videoElement');
+    video.play(); // Play the video
+}
+
+function showContent() {
+    // Display content after SweetAlert is done
+    const contentWrapper = document.getElementById("contentWrapper");
+    contentWrapper.style.display = "flex"; // Use flexbox to align video and text
+    setTimeout(() => {
+        contentWrapper.style.opacity = "1"; // Transition effect to show content
+    }, 100);
+}
+
+async function mulai() {
+    const swals = Swal.mixin({
+        backdrop: 'rgba(0,0,0,0.4)', allowOutsideClick: false,
+    });
+
+    await swals.fire('Haii Cantikkk');
+    await swals.fire('Ciee tambah tuaa hehe');
+    await swals.fire('Selamat Ulang Tahun yaa Cintaakuuu');
+    await swals.fire('Akuu sayaangg bangett samaaa kamuuuu');
+    await swals.fire('Maaf aku blum bisa ngasih Mazda 3 Hatchback, tapi semoga hadiah kecil ini berkesan mwahhh');
+    await swals.fire('I LOVE YOU SAYANGGGG');
+    
+    playAudio(); 
+    playVideo(); // Call the function to play the video
+    ketik(); 
+    showContent();  // Display video and text after the last dialog
+}            
+
+mulai();          
+    
+function ketik() {
+    if (i < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(ketik, 100); // Simulate typing delay
+    }
+}
+</script>
+
+<script>
+    const body = document.querySelector("body");
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "fas fa-heart heart";
+        heart.style.left = (Math.random() * 90) + "vw";
+        heart.style.top = "100vh";
+        body.appendChild(heart);
+    }
+
+    setInterval(function() {
+        var heartArr = document.querySelectorAll(".fa-heart");
+        if (heartArr.length > 100) {
+            heartArr[0].remove();
+        }
+    }, 100);
+
+    window.addEventListener('load', function() {
+
+    setInterval(createHeart, 500); // Add heart every 500ms
+});
+</script>
+
+</body>
+</html>
